@@ -84,6 +84,13 @@
             MsgBox("File Does Not Exist")
         End If
 
+        '************************************* TEST COOKIE ******************************************
+
+
+
+
+
+
         'Read the Room file into the dropdown box.
         'If the file path exists then,
         If System.IO.File.Exists(RoomFileName) = True Then
