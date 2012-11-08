@@ -23,13 +23,13 @@
         TimeEnd = cmbTimeFinish.SelectedItem
 
         'Array
-        LessonArray(0) = Lecturer
-        LessonArray(1) = Group
-        LessonArray(2) = Subject
-        LessonArray(3) = Room
-        LessonArray(4) = Day
-        LessonArray(5) = TimeStart
-        LessonArray(6) = TimeEnd
+        'LessonArray(0) = Lecturer
+        'LessonArray(1) = Group
+        'LessonArray(2) = Subject
+        'LessonArray(3) = Room
+        'LessonArray(4) = Day
+        'LessonArray(5) = TimeStart
+        'LessonArray(6) = TimeEnd
 
         'List in Listbox
         For intCount = 0 To 6
