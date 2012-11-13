@@ -138,4 +138,35 @@
         TableLayoutPanel1.Controls.Add(mC, 15, 4)
         TableLayoutPanel1.SetColumnSpan(mC, 4)
     End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim fileLesson As String = "\\Win-L410-Server\Netusers\scook\Desktop\GitHub\timetable\code\Test Text Files\lessons.txt"
+
+        If System.IO.File.Exists(fileLesson) = True Then
+
+            'Open the lesson file
+            Dim writer As New IO.StreamWriter(fileLesson)
+
+            'Now we want to loop through each line in the ListBox
+            'We use .Count - 1 because the index starts at 0 (zero)
+            'so if we go to the actual count we will get an
+            'IndexOutOfRangeException
+            For i As Integer = 0 To lstLesson.Items.Count - 1
+                'Now for each line we call WriteLine to write
+                'the item to our text file
+                writer.WriteLine(lstLesson.Items.Item(i))
+            Next
+
+            'Now we need to close our StreamWriter to
+            'free up the resources
+            writer.Close()
+
+        Else
+
+            MsgBox("File Does Not Exist")
+
+        End If
+
+        
+    End Sub
 End Class
