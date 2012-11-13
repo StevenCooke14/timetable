@@ -41,16 +41,17 @@
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Define the pathways
-        Dim LecturerFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\lecturer.txt"
-        Dim ClassFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\class.txt"
-        Dim RoomFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\room.txt"
-        Dim ModuleFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\module.txt"
+        Dim LecturerFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\lecturer.txt" 'remember to change this according to machine stored on local machine   "dan"
+        Dim ClassFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\class.txt"          'remember to change this according to machine stored on local machine   "dan"
+        Dim RoomFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\room.txt"                'remember to change this according to machine stored on local machine   "dan"
+        Dim ModuleFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\module.txt"                'remember to change this according to machine stored on local machine   "dan"
 
         'Variables to save the list of data to.
         Dim LecturerLine As String
         Dim ClassLine As String
         Dim RoomLine As String
         Dim ModuleLine As String
+        Dim HoursLine As String
 
         'Read the lecturer file into the dropdown box.
         'If the file path exists then,
@@ -59,8 +60,11 @@
             'Display text,
             Do While objReader.Peek() <> -1
                 LecturerLine = ""
-                LecturerLine = LecturerLine & objReader.ReadLine() & vbNewLine
+                LecturerLine = LecturerLine & objReader.ReadLine()
                 cmbLecturer.Items.Add(LecturerLine)
+                HoursLine = ""
+                HoursLine = HoursLine & objReader.ReadLine()
+                cmbHours.Items.Add(HoursLine)
             Loop
             'If file does not exist then,
         Else
@@ -75,7 +79,7 @@
             'Display text,
             Do While objReader.Peek() <> -1
                 ClassLine = ""
-                ClassLine = ClassLine & objReader.ReadLine() & vbNewLine
+                ClassLine = ClassLine & objReader.ReadLine()
                 cmbClass.Items.Add(ClassLine)
             Loop
             'If file does not exist then,
@@ -92,7 +96,7 @@
             'Display text,
             Do While objReader.Peek() <> -1
                 RoomLine = ""
-                RoomLine = RoomLine & objReader.ReadLine() & vbNewLine
+                RoomLine = RoomLine & objReader.ReadLine()
                 cmbRoom.Items.Add(RoomLine)
             Loop
             'If file does not exist then,
@@ -108,7 +112,7 @@
             'Display text,
             Do While objReader.Peek() <> -1
                 ModuleLine = ""
-                ModuleLine = ModuleLine & objReader.ReadLine() & vbNewLine
+                ModuleLine = ModuleLine & objReader.ReadLine()
                 cmbModule.Items.Add(ModuleLine)
             Loop
             'If file does not exist then,
@@ -116,6 +120,9 @@
             'Notify user.
             MsgBox("File Does Not Exist")
         End If
+
+        
+
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
@@ -138,4 +145,35 @@
         TableLayoutPanel1.Controls.Add(mC, 15, 4)
         TableLayoutPanel1.SetColumnSpan(mC, 4)
     End Sub
+
+    Private Sub lstLesson_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstLesson.SelectedIndexChanged
+
+    End Sub
+
+   
+    
+    Private Sub UpdateHours_Click(sender As Object, e As EventArgs) Handles UpdateHours.Click
+
+
+        Try
+            Dim mon As Integer = Int32.Parse(MondayHours.Text)
+            Dim tue As Integer = Int32.Parse(TuesdayHours.Text)
+            Dim wed As Integer = Int32.Parse(WednesdayHours.Text)
+            Dim thu As Integer = Int32.Parse(ThursdayHours.Text)
+            Dim fri As Integer = Int32.Parse(FridayHours.Text)
+            Dim sat As Integer = Int32.Parse(SaturdayHours.Text)
+
+            TotalHours.Text = mon + tue + wed + thu + fri + sat
+
+        Catch
+
+            MessageBox.Show("please enter only numbers into the day fields")
+
+        End Try
+
+
+
+    End Sub
+
+    
 End Class
