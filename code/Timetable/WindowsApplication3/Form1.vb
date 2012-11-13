@@ -1,41 +1,51 @@
 ﻿Public Class frmMain
+    Private m_timetable As Timetable
+
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        Dim Lecturer As String
-        Dim Group As String
-        Dim Subject As String
-        Dim Room As String
-        Dim Day As String
-        Dim TimeStart As Integer
-        Dim TimeEnd As Integer
+        'Dim Lecturer As String
+        'Dim Group As String
+        'Dim Subject As String
+        'Dim Room As String
+        'Dim Day As String
+        'Dim TimeStart As Integer
+        'Dim TimeEnd As Integer
 
-        Dim intCount As Byte
+        'Dim intCount As Byte
 
-        Dim LessonArray(0 To 6) As String
-        'Varibles store lesson data
-        Lecturer = cmbLecturer.SelectedItem.ToString
+        'Dim LessonArray(0 To 6) As String
+        ''Varibles store lesson data
+        'Lecturer = cmbLecturer.SelectedItem.ToString
 
-        'Add selected items to variables
-        Group = cmbClass.SelectedItem.ToString
-        Subject = cmbModule.SelectedItem.ToString
-        Room = cmbRoom.SelectedItem.ToString
-        Day = cmbDay.SelectedItem.ToString
-        TimeStart = cmbTimeStart.SelectedItem
-        TimeEnd = cmbTimeFinish.SelectedItem
+        ''Add selected items to variables
+        'Group = cmbClass.SelectedItem.ToString
+        'Subject = cmbModule.SelectedItem.ToString
+        'Room = cmbRoom.SelectedItem.ToString
+        'Day = cmbDay.SelectedItem.ToString
+        'TimeStart = cmbTimeStart.SelectedItem
+        'TimeEnd = cmbTimeFinish.SelectedItem
 
-        'Array
-        LessonArray(0) = Lecturer
-        LessonArray(1) = Group
-        LessonArray(2) = Subject
-        LessonArray(3) = Room
-        LessonArray(4) = Day
-        LessonArray(5) = TimeStart
-        LessonArray(6) = TimeEnd
+        ''Array
+        'LessonArray(0) = Lecturer
+        'LessonArray(1) = Group
+        'LessonArray(2) = Subject
+        'LessonArray(3) = Room
+        'LessonArray(4) = Day
+        'LessonArray(5) = TimeStart
+        'LessonArray(6) = TimeEnd
 
-        'List in Listbox
-        For intCount = 0 To 6
-            'MessageBox.Show(LessonArray(intCount))
-            lstLesson.Items.Add(LessonArray(intCount))
-        Next intCount
+        ''List in Listbox
+        'For intCount = 0 To 6
+        '    'MessageBox.Show(LessonArray(intCount))
+        '    lstLesson.Items.Add(LessonArray(intCount))
+        'Next intCount
+
+        Dim l As Lesson
+
+        l = New Lesson(cmbRoom.SelectedItem.ToString)
+        m_timetable.addLesson(l)
+
+        ' display all lessons on the timetable
+        m_timetable.showLessons(lstLesson)
 
     End Sub
 
@@ -52,6 +62,9 @@
         Dim RoomLine As String
         Dim ModuleLine As String
         Dim HoursLine As String
+
+        ' create the main timetable 
+        m_timetable = New Timetable()
 
         'Read the lecturer file into the dropdown box.
         'If the file path exists then,
@@ -146,6 +159,7 @@
         TableLayoutPanel1.SetColumnSpan(mC, 4)
     End Sub
 
+<<<<<<< HEAD
     Private Sub lstLesson_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstLesson.SelectedIndexChanged
 
     End Sub
@@ -176,4 +190,35 @@
     End Sub
 
     
+=======
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim fileLesson As String = "\\Win-L410-Server\Netusers\scook\Desktop\GitHub\timetable\code\Test Text Files\lessons.txt"
+
+        If System.IO.File.Exists(fileLesson) = True Then
+
+            ''Open the lesson file
+
+            Dim writer As New IO.StreamWriter(fileLesson)
+
+            ''Loop through the listbox reading each line to file.
+
+            'For i As Integer = 0 To lstLesson.Items.Count - 1
+            '    'Write each line to file
+            '    writer.WriteLine(lstLesson.Items.Item(i))
+            'Next
+            m_timetable.saveData(writer)
+
+            'Close the stream writer
+
+            writer.Close()
+
+        Else
+
+            MsgBox("File Does Not Exist")
+
+        End If
+
+
+    End Sub
+>>>>>>> 7ec9283570729d7addb23d1777a6a345550f9b74
 End Class
