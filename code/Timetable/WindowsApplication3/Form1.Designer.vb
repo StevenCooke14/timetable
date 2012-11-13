@@ -51,6 +51,12 @@ Partial Class frmMain
         Me.cmbTimeFinish = New System.Windows.Forms.ComboBox()
         Me.cmbTimeStart = New System.Windows.Forms.ComboBox()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tbpLesson.SuspendLayout()
         Me.tbpLecturer.SuspendLayout()
@@ -111,6 +117,12 @@ Partial Class frmMain
         '
         'tbpLesson
         '
+        Me.tbpLesson.Controls.Add(Me.Label11)
+        Me.tbpLesson.Controls.Add(Me.Label10)
+        Me.tbpLesson.Controls.Add(Me.Label9)
+        Me.tbpLesson.Controls.Add(Me.Label8)
+        Me.tbpLesson.Controls.Add(Me.Label7)
+        Me.tbpLesson.Controls.Add(Me.Label6)
         Me.tbpLesson.Controls.Add(Me.TableLayoutPanel1)
         Me.tbpLesson.Location = New System.Drawing.Point(4, 22)
         Me.tbpLesson.Name = "tbpLesson"
@@ -159,7 +171,7 @@ Partial Class frmMain
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.777778!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.777778!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.777778!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(19, 6)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(37, 32)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 6
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
@@ -168,7 +180,7 @@ Partial Class frmMain
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(649, 234)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(619, 208)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'tbpLecturer
@@ -314,7 +326,7 @@ Partial Class frmMain
         'cmbDay
         '
         Me.cmbDay.FormattingEnabled = True
-        Me.cmbDay.Items.AddRange(New Object() {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"})
+        Me.cmbDay.Items.AddRange(New Object() {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"})
         Me.cmbDay.Location = New System.Drawing.Point(81, 120)
         Me.cmbDay.Name = "cmbDay"
         Me.cmbDay.Size = New System.Drawing.Size(88, 21)
@@ -343,7 +355,7 @@ Partial Class frmMain
         Me.lstLesson.FormattingEnabled = True
         Me.lstLesson.Location = New System.Drawing.Point(267, 28)
         Me.lstLesson.Name = "lstLesson"
-        Me.lstLesson.Size = New System.Drawing.Size(116, 173)
+        Me.lstLesson.Size = New System.Drawing.Size(116, 147)
         Me.lstLesson.TabIndex = 16
         '
         'btnCreate
@@ -439,12 +451,66 @@ Partial Class frmMain
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(288, 227)
+        Me.btnSave.Location = New System.Drawing.Point(175, 230)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 28
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(3, 42)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(28, 13)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Mon"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(3, 76)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(31, 13)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "Tues"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(3, 110)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(30, 13)
+        Me.Label8.TabIndex = 3
+        Me.Label8.Text = "Wed"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(3, 144)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(29, 13)
+        Me.Label9.TabIndex = 4
+        Me.Label9.Text = "Thur"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(3, 178)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(18, 13)
+        Me.Label10.TabIndex = 5
+        Me.Label10.Text = "Fri"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(3, 215)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(23, 13)
+        Me.Label11.TabIndex = 6
+        Me.Label11.Text = "Sat"
         '
         'frmMain
         '
@@ -478,6 +544,7 @@ Partial Class frmMain
         Me.Text = "Timetable"
         Me.TabControl1.ResumeLayout(False)
         Me.tbpLesson.ResumeLayout(False)
+        Me.tbpLesson.PerformLayout()
         Me.tbpLecturer.ResumeLayout(False)
         Me.tbpClass.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -513,5 +580,11 @@ Partial Class frmMain
     Friend WithEvents cmbTimeFinish As System.Windows.Forms.ComboBox
     Friend WithEvents cmbTimeStart As System.Windows.Forms.ComboBox
     Friend WithEvents btnSave As System.Windows.Forms.Button
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 
 End Class

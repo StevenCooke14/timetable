@@ -1,41 +1,51 @@
 ﻿Public Class frmMain
+    Private m_timetable As Timetable
+
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        Dim Lecturer As String
-        Dim Group As String
-        Dim Subject As String
-        Dim Room As String
-        Dim Day As String
-        Dim TimeStart As Integer
-        Dim TimeEnd As Integer
+        'Dim Lecturer As String
+        'Dim Group As String
+        'Dim Subject As String
+        'Dim Room As String
+        'Dim Day As String
+        'Dim TimeStart As Integer
+        'Dim TimeEnd As Integer
 
-        Dim intCount As Byte
+        'Dim intCount As Byte
 
-        Dim LessonArray(0 To 6) As String
-        'Varibles store lesson data
-        Lecturer = cmbLecturer.SelectedItem.ToString
+        'Dim LessonArray(0 To 6) As String
+        ''Varibles store lesson data
+        'Lecturer = cmbLecturer.SelectedItem.ToString
 
-        'Add selected items to variables
-        Group = cmbClass.SelectedItem.ToString
-        Subject = cmbModule.SelectedItem.ToString
-        Room = cmbRoom.SelectedItem.ToString
-        Day = cmbDay.SelectedItem.ToString
-        TimeStart = cmbTimeStart.SelectedItem
-        TimeEnd = cmbTimeFinish.SelectedItem
+        ''Add selected items to variables
+        'Group = cmbClass.SelectedItem.ToString
+        'Subject = cmbModule.SelectedItem.ToString
+        'Room = cmbRoom.SelectedItem.ToString
+        'Day = cmbDay.SelectedItem.ToString
+        'TimeStart = cmbTimeStart.SelectedItem
+        'TimeEnd = cmbTimeFinish.SelectedItem
 
-        'Array
-        LessonArray(0) = Lecturer
-        LessonArray(1) = Group
-        LessonArray(2) = Subject
-        LessonArray(3) = Room
-        LessonArray(4) = Day
-        LessonArray(5) = TimeStart
-        LessonArray(6) = TimeEnd
+        ''Array
+        'LessonArray(0) = Lecturer
+        'LessonArray(1) = Group
+        'LessonArray(2) = Subject
+        'LessonArray(3) = Room
+        'LessonArray(4) = Day
+        'LessonArray(5) = TimeStart
+        'LessonArray(6) = TimeEnd
 
-        'List in Listbox
-        For intCount = 0 To 6
-            'MessageBox.Show(LessonArray(intCount))
-            lstLesson.Items.Add(LessonArray(intCount))
-        Next intCount
+        ''List in Listbox
+        'For intCount = 0 To 6
+        '    'MessageBox.Show(LessonArray(intCount))
+        '    lstLesson.Items.Add(LessonArray(intCount))
+        'Next intCount
+
+        Dim l As Lesson
+
+        l = New Lesson(cmbRoom.SelectedItem.ToString)
+        m_timetable.addLesson(l)
+
+        ' display all lessons on the timetable
+        m_timetable.showLessons(lstLesson)
 
     End Sub
 
@@ -52,6 +62,9 @@
         Dim RoomLine As String
         Dim ModuleLine As String
 
+        ' create the main timetable 
+        m_timetable = New Timetable()
+
         'Read the lecturer file into the dropdown box.
         'If the file path exists then,
         If System.IO.File.Exists(LecturerFileName) = True Then
@@ -59,7 +72,7 @@
             'Display text,
             Do While objReader.Peek() <> -1
                 LecturerLine = ""
-                LecturerLine = LecturerLine & objReader.ReadLine() & vbNewLine
+                LecturerLine = LecturerLine & objReader.ReadLine()
                 cmbLecturer.Items.Add(LecturerLine)
             Loop
             'If file does not exist then,
@@ -75,7 +88,7 @@
             'Display text,
             Do While objReader.Peek() <> -1
                 ClassLine = ""
-                ClassLine = ClassLine & objReader.ReadLine() & vbNewLine
+                ClassLine = ClassLine & objReader.ReadLine()
                 cmbClass.Items.Add(ClassLine)
             Loop
             'If file does not exist then,
@@ -92,7 +105,7 @@
             'Display text,
             Do While objReader.Peek() <> -1
                 RoomLine = ""
-                RoomLine = RoomLine & objReader.ReadLine() & vbNewLine
+                RoomLine = RoomLine & objReader.ReadLine()
                 cmbRoom.Items.Add(RoomLine)
             Loop
             'If file does not exist then,
@@ -108,7 +121,7 @@
             'Display text,
             Do While objReader.Peek() <> -1
                 ModuleLine = ""
-                ModuleLine = ModuleLine & objReader.ReadLine() & vbNewLine
+                ModuleLine = ModuleLine & objReader.ReadLine()
                 cmbModule.Items.Add(ModuleLine)
             Loop
             'If file does not exist then,
@@ -144,21 +157,20 @@
 
         If System.IO.File.Exists(fileLesson) = True Then
 
-            'Open the lesson file
+            ''Open the lesson file
+
             Dim writer As New IO.StreamWriter(fileLesson)
 
-            'Now we want to loop through each line in the ListBox
-            'We use .Count - 1 because the index starts at 0 (zero)
-            'so if we go to the actual count we will get an
-            'IndexOutOfRangeException
-            For i As Integer = 0 To lstLesson.Items.Count - 1
-                'Now for each line we call WriteLine to write
-                'the item to our text file
-                writer.WriteLine(lstLesson.Items.Item(i))
-            Next
+            ''Loop through the listbox reading each line to file.
 
-            'Now we need to close our StreamWriter to
-            'free up the resources
+            'For i As Integer = 0 To lstLesson.Items.Count - 1
+            '    'Write each line to file
+            '    writer.WriteLine(lstLesson.Items.Item(i))
+            'Next
+            m_timetable.saveData(writer)
+
+            'Close the stream writer
+
             writer.Close()
 
         Else
@@ -167,6 +179,6 @@
 
         End If
 
-        
+
     End Sub
 End Class
