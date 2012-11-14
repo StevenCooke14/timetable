@@ -41,7 +41,7 @@
 
         Dim l As Lesson
 
-        l = New Lesson(cmbRoom.SelectedItem.ToString)
+        l = New Lesson(cmbRoom.SelectedItem.ToString, cmbModule.SelectedItem.ToString)
         m_timetable.addLesson(l)
 
         ' display all lessons on the timetable
