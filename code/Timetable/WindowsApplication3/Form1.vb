@@ -159,7 +159,6 @@
         TableLayoutPanel1.SetColumnSpan(mC, 4)
     End Sub
 
-<<<<<<< HEAD
     Private Sub lstLesson_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstLesson.SelectedIndexChanged
 
     End Sub
@@ -190,7 +189,6 @@
     End Sub
 
     
-=======
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Dim fileLesson As String = "\\Win-L410-Server\Netusers\scook\Desktop\GitHub\timetable\code\Test Text Files\lessons.txt"
 
@@ -220,5 +218,4 @@
 
 
     End Sub
->>>>>>> 7ec9283570729d7addb23d1777a6a345550f9b74
 End Class

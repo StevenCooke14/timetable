@@ -35,14 +35,8 @@ Partial Class frmMain
         Me.tbpClass = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.LecturerHoursTab = New System.Windows.Forms.TabPage()
+        Me.UpdateHours = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.TotalHours = New System.Windows.Forms.TextBox()
         Me.SaturdayHours = New System.Windows.Forms.TextBox()
         Me.FridayHours = New System.Windows.Forms.TextBox()
@@ -67,9 +61,6 @@ Partial Class frmMain
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cmbTimeFinish = New System.Windows.Forms.ComboBox()
         Me.cmbTimeStart = New System.Windows.Forms.ComboBox()
-<<<<<<< HEAD
-        Me.UpdateHours = New System.Windows.Forms.Button()
-=======
         Me.btnSave = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -77,7 +68,13 @@ Partial Class frmMain
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
->>>>>>> 7ec9283570729d7addb23d1777a6a345550f9b74
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tbpLesson.SuspendLayout()
         Me.tbpLecturer.SuspendLayout()
@@ -87,11 +84,10 @@ Partial Class frmMain
         '
         'cmbLecturer
         '
-        Me.cmbLecturer.FormattingEnabled = True
-        Me.cmbLecturer.Location = New System.Drawing.Point(81, 12)
+        Me.cmbLecturer.Location = New System.Drawing.Point(81, 15)
         Me.cmbLecturer.Name = "cmbLecturer"
         Me.cmbLecturer.Size = New System.Drawing.Size(88, 21)
-        Me.cmbLecturer.TabIndex = 3
+        Me.cmbLecturer.TabIndex = 29
         '
         'cmbClass
         '
@@ -140,12 +136,12 @@ Partial Class frmMain
         '
         'tbpLesson
         '
-        Me.tbpLesson.Controls.Add(Me.Label11)
-        Me.tbpLesson.Controls.Add(Me.Label10)
-        Me.tbpLesson.Controls.Add(Me.Label9)
-        Me.tbpLesson.Controls.Add(Me.Label8)
-        Me.tbpLesson.Controls.Add(Me.Label7)
-        Me.tbpLesson.Controls.Add(Me.Label6)
+        Me.tbpLesson.Controls.Add(Me.Label22)
+        Me.tbpLesson.Controls.Add(Me.Label21)
+        Me.tbpLesson.Controls.Add(Me.Label20)
+        Me.tbpLesson.Controls.Add(Me.Label16)
+        Me.tbpLesson.Controls.Add(Me.Label15)
+        Me.tbpLesson.Controls.Add(Me.Label14)
         Me.tbpLesson.Controls.Add(Me.TableLayoutPanel1)
         Me.tbpLesson.Location = New System.Drawing.Point(4, 22)
         Me.tbpLesson.Name = "tbpLesson"
@@ -330,8 +326,6 @@ Partial Class frmMain
         '
         'LecturerHoursTab
         '
-        Me.LecturerHoursTab.Controls.Add(Me.UpdateHours)
-        Me.LecturerHoursTab.Controls.Add(Me.Label13)
         Me.LecturerHoursTab.Controls.Add(Me.Label12)
         Me.LecturerHoursTab.Controls.Add(Me.Label11)
         Me.LecturerHoursTab.Controls.Add(Me.Label10)
@@ -339,6 +333,8 @@ Partial Class frmMain
         Me.LecturerHoursTab.Controls.Add(Me.Label8)
         Me.LecturerHoursTab.Controls.Add(Me.Label7)
         Me.LecturerHoursTab.Controls.Add(Me.Label6)
+        Me.LecturerHoursTab.Controls.Add(Me.UpdateHours)
+        Me.LecturerHoursTab.Controls.Add(Me.Label13)
         Me.LecturerHoursTab.Controls.Add(Me.TotalHours)
         Me.LecturerHoursTab.Controls.Add(Me.SaturdayHours)
         Me.LecturerHoursTab.Controls.Add(Me.FridayHours)
@@ -355,6 +351,15 @@ Partial Class frmMain
         Me.LecturerHoursTab.Text = "Lecturer Hours"
         Me.LecturerHoursTab.UseVisualStyleBackColor = True
         '
+        'UpdateHours
+        '
+        Me.UpdateHours.Location = New System.Drawing.Point(218, 201)
+        Me.UpdateHours.Name = "UpdateHours"
+        Me.UpdateHours.Size = New System.Drawing.Size(131, 23)
+        Me.UpdateHours.TabIndex = 16
+        Me.UpdateHours.Text = "Update Total Hours"
+        Me.UpdateHours.UseVisualStyleBackColor = True
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -363,69 +368,6 @@ Partial Class frmMain
         Me.Label13.Size = New System.Drawing.Size(62, 13)
         Me.Label13.TabIndex = 15
         Me.Label13.Text = "Total Hours"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(406, 128)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(49, 13)
-        Me.Label12.TabIndex = 14
-        Me.Label12.Text = "Saturday"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(406, 69)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(35, 13)
-        Me.Label11.TabIndex = 13
-        Me.Label11.Text = "Friday"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(222, 128)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(51, 13)
-        Me.Label10.TabIndex = 12
-        Me.Label10.Text = "Thursday"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(222, 69)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(64, 13)
-        Me.Label9.TabIndex = 11
-        Me.Label9.Text = "Wednesday"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(29, 128)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(48, 13)
-        Me.Label8.TabIndex = 10
-        Me.Label8.Text = "Tuesday"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(29, 66)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(45, 13)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "Monday"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(29, 13)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(85, 13)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Choose Lecturer"
         '
         'TotalHours
         '
@@ -628,16 +570,6 @@ Partial Class frmMain
         Me.cmbTimeStart.Size = New System.Drawing.Size(88, 21)
         Me.cmbTimeStart.TabIndex = 27
         '
-<<<<<<< HEAD
-        'UpdateHours
-        '
-        Me.UpdateHours.Location = New System.Drawing.Point(218, 201)
-        Me.UpdateHours.Name = "UpdateHours"
-        Me.UpdateHours.Size = New System.Drawing.Size(131, 23)
-        Me.UpdateHours.TabIndex = 16
-        Me.UpdateHours.Text = "Update Total Hours"
-        Me.UpdateHours.UseVisualStyleBackColor = True
-=======
         'btnSave
         '
         Me.btnSave.Location = New System.Drawing.Point(175, 230)
@@ -650,57 +582,119 @@ Partial Class frmMain
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 42)
+        Me.Label6.Location = New System.Drawing.Point(26, 10)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(28, 13)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "Mon"
+        Me.Label6.Size = New System.Drawing.Size(80, 13)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "choose lecturer"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(3, 76)
+        Me.Label7.Location = New System.Drawing.Point(29, 62)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(31, 13)
-        Me.Label7.TabIndex = 2
-        Me.Label7.Text = "Tues"
+        Me.Label7.Size = New System.Drawing.Size(44, 13)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "monday"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(3, 110)
+        Me.Label8.Location = New System.Drawing.Point(32, 125)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(30, 13)
-        Me.Label8.TabIndex = 3
-        Me.Label8.Text = "Wed"
+        Me.Label8.Size = New System.Drawing.Size(44, 13)
+        Me.Label8.TabIndex = 19
+        Me.Label8.Text = "tuesday"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(3, 144)
+        Me.Label9.Location = New System.Drawing.Point(218, 62)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(29, 13)
-        Me.Label9.TabIndex = 4
-        Me.Label9.Text = "Thur"
+        Me.Label9.Size = New System.Drawing.Size(61, 13)
+        Me.Label9.TabIndex = 20
+        Me.Label9.Text = "wednesday"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(3, 178)
+        Me.Label10.Location = New System.Drawing.Point(221, 125)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(18, 13)
-        Me.Label10.TabIndex = 5
-        Me.Label10.Text = "Fri"
+        Me.Label10.Size = New System.Drawing.Size(47, 13)
+        Me.Label10.TabIndex = 21
+        Me.Label10.Text = "thursday"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(3, 215)
+        Me.Label11.Location = New System.Drawing.Point(397, 67)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(23, 13)
-        Me.Label11.TabIndex = 6
-        Me.Label11.Text = "Sat"
->>>>>>> 7ec9283570729d7addb23d1777a6a345550f9b74
+        Me.Label11.Size = New System.Drawing.Size(32, 13)
+        Me.Label11.TabIndex = 22
+        Me.Label11.Text = "friday"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(400, 125)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(47, 13)
+        Me.Label12.TabIndex = 23
+        Me.Label12.Text = "saturday"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(4, 35)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(27, 13)
+        Me.Label14.TabIndex = 1
+        Me.Label14.Text = "mon"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(4, 76)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(22, 13)
+        Me.Label15.TabIndex = 2
+        Me.Label15.Text = "tue"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(4, 116)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(27, 13)
+        Me.Label16.TabIndex = 3
+        Me.Label16.Text = "wed"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(0, 148)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(22, 13)
+        Me.Label20.TabIndex = 4
+        Me.Label20.Text = "thu"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(3, 181)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(15, 13)
+        Me.Label21.TabIndex = 5
+        Me.Label21.Text = "fri"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(3, 213)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(21, 13)
+        Me.Label22.TabIndex = 6
+        Me.Label22.Text = "sat"
         '
         'frmMain
         '
@@ -771,20 +765,9 @@ Partial Class frmMain
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents cmbTimeFinish As System.Windows.Forms.ComboBox
     Friend WithEvents cmbTimeStart As System.Windows.Forms.ComboBox
-<<<<<<< HEAD
     Friend WithEvents LecturerHoursTab As System.Windows.Forms.TabPage
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-=======
     Friend WithEvents btnSave As System.Windows.Forms.Button
->>>>>>> 7ec9283570729d7addb23d1777a6a345550f9b74
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-<<<<<<< HEAD
     Friend WithEvents TotalHours As System.Windows.Forms.TextBox
     Friend WithEvents SaturdayHours As System.Windows.Forms.TextBox
     Friend WithEvents FridayHours As System.Windows.Forms.TextBox
@@ -794,7 +777,18 @@ Partial Class frmMain
     Friend WithEvents MondayHours As System.Windows.Forms.TextBox
     Friend WithEvents cmbHours As System.Windows.Forms.ComboBox
     Friend WithEvents UpdateHours As System.Windows.Forms.Button
-=======
->>>>>>> 7ec9283570729d7addb23d1777a6a345550f9b74
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 
 End Class
