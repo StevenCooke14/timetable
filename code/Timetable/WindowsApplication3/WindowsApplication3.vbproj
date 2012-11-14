@@ -78,6 +78,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Lecturer.vb" />
     <Compile Include="Lesson.vb" />
     <Compile Include="Modules.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

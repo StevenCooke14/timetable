@@ -1,13 +1,13 @@
 ﻿Public Class Lecturer
-    Private m_lName As String
+    Private m_lecturerName As String
 
-    Public Sub New(ByVal lectureName As String)
-        m_lName = lecturerName
+    Public Sub New(ByVal lName As String)
+        m_lecturerName = lName
     End Sub
 
-    ReadOnly Property name() As String
+    ReadOnly Property lName() As String
         Get
-            Return m_lname
+            Return m_lecturerName
         End Get
     End Property
 End Class
