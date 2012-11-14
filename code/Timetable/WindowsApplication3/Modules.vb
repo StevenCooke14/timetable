@@ -1,5 +1,5 @@
-﻿Public Class Modules
-
+﻿
+Class Modules
     Private m_moduleCode As String
 
     Public Sub New(ByVal moduleCode As String)
@@ -11,5 +11,4 @@
             Return m_moduleCode
         End Get
     End Property
-
 End Class
