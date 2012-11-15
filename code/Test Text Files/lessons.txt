@@ -1,2 +1,2 @@
-L450,MOD1234,A,Dave Turvey,Monday,1000,0845
-L450,MODA456,A,Dave Turvey,Wednesday,1000,0845
+L450,MOD1234,B,Dave Turvey,Monday,0900,0845
+L450,MOD1234,A,Liz Thompson,Monday,0900,0845

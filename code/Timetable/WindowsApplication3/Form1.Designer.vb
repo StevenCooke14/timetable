@@ -598,7 +598,7 @@ Partial Class frmMain
         '
         'btnCreate
         '
-        Me.btnCreate.Location = New System.Drawing.Point(175, 42)
+        Me.btnCreate.Location = New System.Drawing.Point(175, 173)
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(86, 23)
         Me.btnCreate.TabIndex = 17
@@ -607,7 +607,7 @@ Partial Class frmMain
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(175, 12)
+        Me.btnClear.Location = New System.Drawing.Point(175, 140)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(86, 23)
         Me.btnClear.TabIndex = 18

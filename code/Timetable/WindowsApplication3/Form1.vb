@@ -241,4 +241,9 @@
 
 
     End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        m_timetable.removeData(lstLesson.SelectedIndex, lstLesson)
+
+    End Sub
 End Class

@@ -1,29 +1,29 @@
 ﻿Public Class Timetable
-    Private m_lessons(0 To 50) As Lesson
-    Private m_nLessons As Integer
-
-    Public Sub New()
-        m_nLessons = 0
-    End Sub
+    Private m_lessons As New List(Of Lesson)
 
     Public Sub addLesson(ByRef l As Lesson)
-        m_lessons(m_nLessons) = l
-        m_nLessons = m_nLessons + 1
+        m_lessons.Add(l)
+
     End Sub
 
     Public Sub showLessons(ByRef l As ListBox)
         ''List in Listbox
-        Dim tl As Lesson
+
         l.Items.Clear()
-        For intCount = 0 To m_nLessons - 1
-            tl = m_lessons(intCount)
-            l.Items.Add(tl.displayString)
-        Next intCount
+        For Each lm In m_lessons
+            l.Items.Add(lm.displayString())
+        Next
+        
     End Sub
 
     Public Sub saveData(ByRef theStream As IO.StreamWriter)
-        For intCount = 0 To m_nLessons - 1
-            m_lessons(intCount).saveData(theStream)
-        Next intCount
+        For Each lm In m_lessons
+            lm.saveData(theStream)
+        Next
+    End Sub
+
+    Public Sub removeData(ByVal i As Integer, ByRef l As ListBox)
+        m_lessons.RemoveAt(i)
+        showLessons(l)
     End Sub
 End Class
