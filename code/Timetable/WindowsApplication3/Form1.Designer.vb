@@ -29,12 +29,25 @@ Partial Class frmMain
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tbpLesson = New System.Windows.Forms.TabPage()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.tbpLecturer = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.tbpClass = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.LecturerHoursTab = New System.Windows.Forms.TabPage()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.UpdateHours = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TotalHours = New System.Windows.Forms.TextBox()
@@ -62,19 +75,6 @@ Partial Class frmMain
         Me.cmbTimeFinish = New System.Windows.Forms.ComboBox()
         Me.cmbTimeStart = New System.Windows.Forms.ComboBox()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tbpLesson.SuspendLayout()
         Me.tbpLecturer.SuspendLayout()
@@ -115,7 +115,7 @@ Partial Class frmMain
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(175, 122)
+        Me.btnUpdate.Location = New System.Drawing.Point(305, 357)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(86, 23)
         Me.btnUpdate.TabIndex = 7
@@ -128,10 +128,10 @@ Partial Class frmMain
         Me.TabControl1.Controls.Add(Me.tbpLecturer)
         Me.TabControl1.Controls.Add(Me.tbpClass)
         Me.TabControl1.Controls.Add(Me.LecturerHoursTab)
-        Me.TabControl1.Location = New System.Drawing.Point(389, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(415, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(680, 273)
+        Me.TabControl1.Size = New System.Drawing.Size(682, 287)
         Me.TabControl1.TabIndex = 8
         '
         'tbpLesson
@@ -146,10 +146,64 @@ Partial Class frmMain
         Me.tbpLesson.Location = New System.Drawing.Point(4, 22)
         Me.tbpLesson.Name = "tbpLesson"
         Me.tbpLesson.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpLesson.Size = New System.Drawing.Size(672, 247)
+        Me.tbpLesson.Size = New System.Drawing.Size(674, 261)
         Me.tbpLesson.TabIndex = 0
         Me.tbpLesson.Text = "Lesson Timetable"
         Me.tbpLesson.UseVisualStyleBackColor = True
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(3, 213)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(21, 13)
+        Me.Label22.TabIndex = 6
+        Me.Label22.Text = "sat"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(3, 181)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(15, 13)
+        Me.Label21.TabIndex = 5
+        Me.Label21.Text = "fri"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(0, 148)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(22, 13)
+        Me.Label20.TabIndex = 4
+        Me.Label20.Text = "thu"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(4, 116)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(27, 13)
+        Me.Label16.TabIndex = 3
+        Me.Label16.Text = "wed"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(4, 76)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(22, 13)
+        Me.Label15.TabIndex = 2
+        Me.Label15.Text = "tue"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(4, 35)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(27, 13)
+        Me.Label14.TabIndex = 1
+        Me.Label14.Text = "mon"
         '
         'TableLayoutPanel1
         '
@@ -351,6 +405,69 @@ Partial Class frmMain
         Me.LecturerHoursTab.Text = "Lecturer Hours"
         Me.LecturerHoursTab.UseVisualStyleBackColor = True
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(400, 125)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(47, 13)
+        Me.Label12.TabIndex = 23
+        Me.Label12.Text = "saturday"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(397, 67)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(32, 13)
+        Me.Label11.TabIndex = 22
+        Me.Label11.Text = "friday"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(221, 125)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(47, 13)
+        Me.Label10.TabIndex = 21
+        Me.Label10.Text = "thursday"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(218, 62)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(61, 13)
+        Me.Label9.TabIndex = 20
+        Me.Label9.Text = "wednesday"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(32, 125)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(44, 13)
+        Me.Label8.TabIndex = 19
+        Me.Label8.Text = "tuesday"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(29, 62)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(44, 13)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "monday"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(26, 10)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(80, 13)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "choose lecturer"
+        '
         'UpdateHours
         '
         Me.UpdateHours.Location = New System.Drawing.Point(218, 201)
@@ -428,7 +545,7 @@ Partial Class frmMain
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(175, 66)
+        Me.btnEdit.Location = New System.Drawing.Point(305, 270)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(86, 23)
         Me.btnEdit.TabIndex = 9
@@ -437,7 +554,7 @@ Partial Class frmMain
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(175, 93)
+        Me.btnDelete.Location = New System.Drawing.Point(305, 299)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 23)
         Me.btnDelete.TabIndex = 10
@@ -474,14 +591,14 @@ Partial Class frmMain
         'lstLesson
         '
         Me.lstLesson.FormattingEnabled = True
-        Me.lstLesson.Location = New System.Drawing.Point(267, 28)
+        Me.lstLesson.Location = New System.Drawing.Point(12, 270)
         Me.lstLesson.Name = "lstLesson"
-        Me.lstLesson.Size = New System.Drawing.Size(116, 147)
+        Me.lstLesson.Size = New System.Drawing.Size(287, 147)
         Me.lstLesson.TabIndex = 16
         '
         'btnCreate
         '
-        Me.btnCreate.Location = New System.Drawing.Point(175, 39)
+        Me.btnCreate.Location = New System.Drawing.Point(175, 42)
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(86, 23)
         Me.btnCreate.TabIndex = 17
@@ -500,7 +617,7 @@ Partial Class frmMain
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(267, 12)
+        Me.Label19.Location = New System.Drawing.Point(12, 238)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(46, 13)
         Me.Label19.TabIndex = 20
@@ -572,135 +689,18 @@ Partial Class frmMain
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(175, 230)
+        Me.btnSave.Location = New System.Drawing.Point(305, 328)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.Size = New System.Drawing.Size(86, 23)
         Me.btnSave.TabIndex = 28
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(26, 10)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 13)
-        Me.Label6.TabIndex = 17
-        Me.Label6.Text = "choose lecturer"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(29, 62)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(44, 13)
-        Me.Label7.TabIndex = 18
-        Me.Label7.Text = "monday"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(32, 125)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(44, 13)
-        Me.Label8.TabIndex = 19
-        Me.Label8.Text = "tuesday"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(218, 62)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(61, 13)
-        Me.Label9.TabIndex = 20
-        Me.Label9.Text = "wednesday"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(221, 125)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(47, 13)
-        Me.Label10.TabIndex = 21
-        Me.Label10.Text = "thursday"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(397, 67)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(32, 13)
-        Me.Label11.TabIndex = 22
-        Me.Label11.Text = "friday"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(400, 125)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(47, 13)
-        Me.Label12.TabIndex = 23
-        Me.Label12.Text = "saturday"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(4, 35)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(27, 13)
-        Me.Label14.TabIndex = 1
-        Me.Label14.Text = "mon"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(4, 76)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(22, 13)
-        Me.Label15.TabIndex = 2
-        Me.Label15.Text = "tue"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(4, 116)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(27, 13)
-        Me.Label16.TabIndex = 3
-        Me.Label16.Text = "wed"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(0, 148)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(22, 13)
-        Me.Label20.TabIndex = 4
-        Me.Label20.Text = "thu"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(3, 181)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(15, 13)
-        Me.Label21.TabIndex = 5
-        Me.Label21.Text = "fri"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(3, 213)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(21, 13)
-        Me.Label22.TabIndex = 6
-        Me.Label22.Text = "sat"
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1147, 288)
+        Me.ClientSize = New System.Drawing.Size(1147, 441)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.cmbTimeStart)
         Me.Controls.Add(Me.cmbTimeFinish)
