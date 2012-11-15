@@ -218,4 +218,16 @@
 
 
     End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+
+        cmbLecturer.Items.Clear()
+        cmbModule.Items.Clear()
+        cmbRoom.Items.Clear()
+        cmbDay.Items.Clear()
+        cmbTimeFinish.Items.Clear()
+        cmbTimeStart.Items.Clear()
+        cmbDay.Items.Clear()
+
+    End Sub
 End Class

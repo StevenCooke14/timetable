@@ -261,7 +261,7 @@ Partial Class frmMain
         Me.tbpLecturer.Controls.Add(Me.TableLayoutPanel2)
         Me.tbpLecturer.Location = New System.Drawing.Point(4, 22)
         Me.tbpLecturer.Name = "tbpLecturer"
-        Me.tbpLecturer.Size = New System.Drawing.Size(672, 247)
+        Me.tbpLecturer.Size = New System.Drawing.Size(674, 261)
         Me.tbpLecturer.TabIndex = 7
         Me.tbpLecturer.Text = "Lecturer Timetable"
         Me.tbpLecturer.UseVisualStyleBackColor = True
@@ -322,7 +322,7 @@ Partial Class frmMain
         Me.tbpClass.Controls.Add(Me.TableLayoutPanel3)
         Me.tbpClass.Location = New System.Drawing.Point(4, 22)
         Me.tbpClass.Name = "tbpClass"
-        Me.tbpClass.Size = New System.Drawing.Size(672, 247)
+        Me.tbpClass.Size = New System.Drawing.Size(674, 261)
         Me.tbpClass.TabIndex = 8
         Me.tbpClass.Text = "Class Timetable"
         Me.tbpClass.UseVisualStyleBackColor = True
@@ -400,7 +400,7 @@ Partial Class frmMain
         Me.LecturerHoursTab.Location = New System.Drawing.Point(4, 22)
         Me.LecturerHoursTab.Name = "LecturerHoursTab"
         Me.LecturerHoursTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.LecturerHoursTab.Size = New System.Drawing.Size(672, 247)
+        Me.LecturerHoursTab.Size = New System.Drawing.Size(674, 261)
         Me.LecturerHoursTab.TabIndex = 9
         Me.LecturerHoursTab.Text = "Lecturer Hours"
         Me.LecturerHoursTab.UseVisualStyleBackColor = True
