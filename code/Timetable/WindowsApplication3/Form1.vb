@@ -246,4 +246,8 @@
         m_timetable.removeData(lstLesson.SelectedIndex, lstLesson)
 
     End Sub
+
+    Private Sub lstLesson_MouseClick(sender As Object, e As EventArgs)
+        m_timetable.showSelected(lstLesson.SelectedIndex, lstLesson)
+    End Sub
 End Class

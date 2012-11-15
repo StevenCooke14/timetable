@@ -26,4 +26,9 @@
         m_lessons.RemoveAt(i)
         showLessons(l)
     End Sub
+
+    Public Sub showSelected(ByVal i As Integer, ByRef l As ListBox)
+        m_lessons(i)
+
+    End Sub
 End Class
