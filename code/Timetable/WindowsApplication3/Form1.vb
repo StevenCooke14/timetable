@@ -221,8 +221,14 @@
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
 
-
-
+        cmbClass.Items.Clear()
+        cmbDay.Items.Clear()
+        cmbHours.Items.Clear()
+        cmbLecturer.Items.Clear()
+        cmbModule.Items.Clear()
+        cmbRoom.Items.Clear()
+        cmbTimeFinish.Items.Clear()
+        cmbTimeStart.Items.Clear()
 
         cmbLecturer.Text = ""
         cmbModule.Text = ""
@@ -232,7 +238,6 @@
         cmbTimeStart.Text = ""
         cmbDay.Text = ""
         cmbClass.Text = ""
-
 
 
     End Sub
