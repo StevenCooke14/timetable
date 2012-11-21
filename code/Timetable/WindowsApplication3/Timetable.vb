@@ -6,12 +6,12 @@
     Public Sub New()
         m_nLessons = 0
 
-        times.Add("8:45")
+        times.Add("08:45")
 
-        times.Add("9:00")
-        times.Add("9:15")
-        times.Add("9:30")
-        times.Add("9:45")
+        times.Add("09:00")
+        times.Add("09:15")
+        times.Add("09:30")
+        times.Add("09:45")
 
         times.Add("10:00")
         times.Add("10:15")
@@ -81,13 +81,13 @@
 
         For intCount = 0 To m_nLessons - 1
             m_panel(intCount) = New Panel()
-            m_panel(intCount).BackColor = Color.Aquamarine
+            m_panel(intCount).BackColor = Color.Red
             t_start = m_lessons(intCount).getStart()
-            x = times.IndexOf(t_start)
+                x = times.IndexOf(t_start)
 
-            t_end = m_lessons(intCount).getEnd()
-            y = m_lessons(intCount).getDaynum()
-            table.Controls.Add(m_panel(intCount), y, x)
+                t_end = m_lessons(intCount).getEnd()
+                y = m_lessons(intCount).getDaynum()
+                table.Controls.Add(m_panel(intCount), x, y)
         Next intCount
 
     End Sub
