@@ -115,7 +115,7 @@ Partial Class frmMain
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(305, 357)
+        Me.btnUpdate.Location = New System.Drawing.Point(313, 305)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(86, 23)
         Me.btnUpdate.TabIndex = 7
@@ -244,6 +244,7 @@ Partial Class frmMain
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.777778!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.777778!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.777778!))
+        Me.TableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(37, 32)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 6
@@ -545,7 +546,7 @@ Partial Class frmMain
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(305, 270)
+        Me.btnEdit.Location = New System.Drawing.Point(313, 218)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(86, 23)
         Me.btnEdit.TabIndex = 9
@@ -554,7 +555,7 @@ Partial Class frmMain
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(305, 299)
+        Me.btnDelete.Location = New System.Drawing.Point(313, 247)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 23)
         Me.btnDelete.TabIndex = 10
@@ -591,7 +592,7 @@ Partial Class frmMain
         'lstLesson
         '
         Me.lstLesson.FormattingEnabled = True
-        Me.lstLesson.Location = New System.Drawing.Point(12, 270)
+        Me.lstLesson.Location = New System.Drawing.Point(20, 218)
         Me.lstLesson.Name = "lstLesson"
         Me.lstLesson.Size = New System.Drawing.Size(287, 147)
         Me.lstLesson.TabIndex = 16
@@ -617,7 +618,7 @@ Partial Class frmMain
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(12, 238)
+        Me.Label19.Location = New System.Drawing.Point(20, 202)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(46, 13)
         Me.Label19.TabIndex = 20
@@ -671,7 +672,7 @@ Partial Class frmMain
         'cmbTimeFinish
         '
         Me.cmbTimeFinish.FormattingEnabled = True
-        Me.cmbTimeFinish.Items.AddRange(New Object() {"0845", "0900", "0915", "0930", "0945", "1000", "1015", "1030", "1045", "1100", "1115", "1130", "1145", "1200", "1215", "1230", "1245", "1300", "1315", "1330", "1345", "1400", "1415", "1430", "1445", "1500", "1515", "1530", "1545", "1600", "1615", "1630", "1645", "1700"})
+        Me.cmbTimeFinish.Items.AddRange(New Object() {"08:45", "09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "12:45", "13:00", "13:15", "13:30", "13:45", "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45", "16:00", "16:15", "16:30", "16:45", "17:00"})
         Me.cmbTimeFinish.Location = New System.Drawing.Point(81, 175)
         Me.cmbTimeFinish.Name = "cmbTimeFinish"
         Me.cmbTimeFinish.Size = New System.Drawing.Size(88, 21)
@@ -681,7 +682,7 @@ Partial Class frmMain
         '
         Me.cmbTimeStart.ForeColor = System.Drawing.SystemColors.WindowText
         Me.cmbTimeStart.FormattingEnabled = True
-        Me.cmbTimeStart.Items.AddRange(New Object() {"0845", "0900", "0915", "0930", "0945", "10:00", "1015", "1030", "1045", "1100", "1115", "1130", "1145", "1200", "1215", "1230", "1245", "1300", "1315", "1330", "1345", "1400", "1415", "1430", "1445", "1500", "1515", "1530", "1545", "1600", "1615", "1630", "1645", "1700"})
+        Me.cmbTimeStart.Items.AddRange(New Object() {"08:45", "09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "12:45", "13:00", "13:15", "13:30", "13:45", "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45", "16:00", "16:15", "16:30", "16:45", "17:00"})
         Me.cmbTimeStart.Location = New System.Drawing.Point(81, 148)
         Me.cmbTimeStart.Name = "cmbTimeStart"
         Me.cmbTimeStart.Size = New System.Drawing.Size(88, 21)
@@ -689,7 +690,7 @@ Partial Class frmMain
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(305, 328)
+        Me.btnSave.Location = New System.Drawing.Point(313, 276)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 23)
         Me.btnSave.TabIndex = 28
@@ -700,7 +701,7 @@ Partial Class frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1147, 425)
+        Me.ClientSize = New System.Drawing.Size(1147, 375)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.cmbTimeStart)
         Me.Controls.Add(Me.cmbTimeFinish)

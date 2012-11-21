@@ -2,34 +2,10 @@
     Private m_lessons(0 To 50) As Lesson
     Private m_panel(0 To 50) As Panel
     Private m_nLessons As Integer
+    Private times As New List(Of String)
     Public Sub New()
         m_nLessons = 0
-    End Sub
-    Public Sub addLesson(ByRef l As Lesson)
-        m_lessons(m_nLessons) = l
-        m_nLessons = m_nLessons + 1
-    End Sub
-    Public Sub showLessons(ByRef l As ListBox)
-        ''List in Listbox
-        Dim tl As Lesson
-        l.Items.Clear()
-        For intCount = 0 To m_nLessons - 1
-            tl = m_lessons(intCount)
-            l.Items.Add(tl.displayString)
-        Next intCount
-    End Sub
-    Public Sub saveData(ByRef theStream As IO.StreamWriter)
-        For intCount = 0 To m_nLessons - 1
-            m_lessons(intCount).saveData(theStream)
-        Next intCount
-    End Sub
-    Public Sub showTimetableLessons(ByRef table As System.Windows.Forms.TableLayoutPanel)
-        Dim mP As Panel
-        Dim t_start As String
-        Dim t_end As String
-        Dim x As Integer
-        Dim y As Integer
-        Dim times As New List(Of String)
+
         times.Add("8:45")
 
         times.Add("9:00")
@@ -72,7 +48,32 @@
         times.Add("16:30")
         times.Add("16:45")
 
-        times.Add("15:00")
+        times.Add("17:00")
+    End Sub
+    Public Sub addLesson(ByRef l As Lesson)
+        m_lessons(m_nLessons) = l
+        m_nLessons = m_nLessons + 1
+    End Sub
+    Public Sub showLessons(ByRef l As ListBox)
+        ''List in Listbox
+        Dim tl As Lesson
+        l.Items.Clear()
+        For intCount = 0 To m_nLessons - 1
+            tl = m_lessons(intCount)
+            l.Items.Add(tl.displayString)
+        Next intCount
+    End Sub
+    Public Sub saveData(ByRef theStream As IO.StreamWriter)
+        For intCount = 0 To m_nLessons - 1
+            m_lessons(intCount).saveData(theStream)
+        Next intCount
+    End Sub
+    Public Sub showTimetableLessons(ByRef table As System.Windows.Forms.TableLayoutPanel)
+        Dim mP As Panel
+        Dim t_start As String
+        Dim t_end As String
+        Dim x As Integer
+        Dim y As Integer
 
         For intCount = 0 To m_nLessons - 1
             table.Controls.Remove(m_panel(intCount))
@@ -85,8 +86,8 @@
             x = times.IndexOf(t_start)
 
             t_end = m_lessons(intCount).getEnd()
-            table.Controls.Add(m_panel(intCount), x, m_lessons(intCount).getDaynum())
-
+            y = m_lessons(intCount).getDaynum()
+            table.Controls.Add(m_panel(intCount), y, x)
         Next intCount
 
     End Sub

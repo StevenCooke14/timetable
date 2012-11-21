@@ -2,46 +2,9 @@
     Private m_timetable As Timetable
 
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        'Dim Lecturer As String
-        'Dim Group As String
-        'Dim Subject As String
-        'Dim Room As String
-        'Dim Day As String
-        'Dim TimeStart As Integer
-        'Dim TimeEnd As Integer
-
-        'Dim intCount As Byte
-
-        'Dim LessonArray(0 To 6) As String
-        ''Varibles store lesson data
-        'Lecturer = cmbLecturer.SelectedItem.ToString
-
-        ''Add selected items to variables
-        'Group = cmbClass.SelectedItem.ToString
-        'Subject = cmbModule.SelectedItem.ToString
-        'Room = cmbRoom.SelectedItem.ToString
-        'Day = cmbDay.SelectedItem.ToString
-        'TimeStart = cmbTimeStart.SelectedItem
-        'TimeEnd = cmbTimeFinish.SelectedItem
-
-        ''Array
-        'LessonArray(0) = Lecturer
-        'LessonArray(1) = Group
-        'LessonArray(2) = Subject
-        'LessonArray(3) = Room
-        'LessonArray(4) = Day
-        'LessonArray(5) = TimeStart
-        'LessonArray(6) = TimeEnd
-
-        ''List in Listbox
-        'For intCount = 0 To 6
-        '    'MessageBox.Show(LessonArray(intCount))
-        '    lstLesson.Items.Add(LessonArray(intCount))
-        'Next intCount
-
         Dim l As Lesson
 
-        l = New Lesson(cmbRoom.SelectedItem.ToString, cmbModule.SelectedItem.ToString, cmbClass.SelectedItem.ToString, cmbLecturer.SelectedItem.ToString, cmbDay.SelectedItem.ToString, cmbTimeFinish.SelectedItem.ToString, cmbTimeStart.SelectedItem.ToString)
+        l = New Lesson(cmbRoom.SelectedItem.ToString, cmbModule.SelectedItem.ToString, cmbClass.SelectedItem.ToString, cmbLecturer.SelectedItem.ToString, cmbDay.SelectedItem.ToString, cmbTimeStart.SelectedItem.ToString, cmbTimeFinish.SelectedItem.ToString)
         m_timetable.addLesson(l)
 
         ' display all lessons on the timetable
@@ -134,7 +97,14 @@
             MsgBox("File Does Not Exist")
         End If
 
-        
+        cmbClass.SelectedIndex = 0
+        cmbDay.SelectedIndex = 0
+        cmbHours.SelectedIndex = 0
+        cmbLecturer.SelectedIndex = 0
+        cmbModule.SelectedIndex = 0
+        cmbRoom.SelectedIndex = 0
+        cmbTimeStart.SelectedIndex = 0
+        cmbTimeFinish.SelectedIndex = 5
 
     End Sub
 
@@ -146,11 +116,7 @@
 
     End Sub
 
-   
-    
     Private Sub UpdateHours_Click(sender As Object, e As EventArgs) Handles UpdateHours.Click
-
-
         Try
             Dim mon As Integer = Int32.Parse(MondayHours.Text)
             Dim tue As Integer = Int32.Parse(TuesdayHours.Text)
