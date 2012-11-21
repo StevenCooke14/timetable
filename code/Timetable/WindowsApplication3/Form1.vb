@@ -139,24 +139,7 @@
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Dim mP As Panel
-        mP = New Panel()
-        mP.BackColor = Color.Aquamarine
-        TableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single
-        TableLayoutPanel1.Controls.Add(mP, 2, 2)
-        TableLayoutPanel1.SetColumnSpan(mP, 8)
-
-        Dim mD As Panel
-        mD = New Panel()
-        mD.BackColor = Color.Red
-        TableLayoutPanel1.Controls.Add(mD, 10, 3)
-        TableLayoutPanel1.SetColumnSpan(mD, 4)
-
-        Dim mC As Panel
-        mC = New Panel()
-        mC.BackColor = Color.Red
-        TableLayoutPanel1.Controls.Add(mC, 15, 4)
-        TableLayoutPanel1.SetColumnSpan(mC, 4)
+        m_timetable.showTimetableLessons(TableLayoutPanel1)
     End Sub
 
     Private Sub lstLesson_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstLesson.SelectedIndexChanged
