@@ -142,7 +142,7 @@
         Dim sat As Integer
 
         Try
-            mon = Int32.Parse(MondayHours.Text)
+            mon = Int32.Parse(MondayHours.Text) 'for now code
             tue = Int32.Parse(TuesdayHours.Text)
             wed = Int32.Parse(WednesdayHours.Text)
             thu = Int32.Parse(ThursdayHours.Text)
@@ -191,27 +191,18 @@
 
 
     End Sub
-
+    'clears the combo boxes
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
 
-        cmbClass.Items.Clear()
-        cmbDay.Items.Clear()
-        cmbHours.Items.Clear()
-        cmbLecturer.Items.Clear()
-        cmbModule.Items.Clear()
-        cmbRoom.Items.Clear()
-        cmbTimeFinish.Items.Clear()
-        cmbTimeStart.Items.Clear()
-
-        cmbLecturer.Text = ""
-        cmbModule.Text = ""
-        cmbRoom.Text = ""
-        cmbDay.Text = ""
-        cmbTimeFinish.Text = ""
-        cmbTimeStart.Text = ""
-        cmbDay.Text = ""
-        cmbClass.Text = ""
-
+        cmbClass.SelectedIndex = -1
+        cmbDay.SelectedIndex = -1
+        cmbHours.SelectedIndex = -1
+        cmbLecturer.SelectedIndex = -1
+        cmbModule.SelectedIndex = -1
+        cmbRoom.SelectedIndex = -1
+        cmbTimeFinish.SelectedIndex = -1
+        cmbTimeStart.SelectedIndex = -1
+        
 
     End Sub
 
