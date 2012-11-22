@@ -14,10 +14,10 @@
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Define the pathways
-        Dim LecturerFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\lecturer.txt" 'remember to change this according to machine stored on local machine   "dan"
-        Dim ClassFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\class.txt"          'remember to change this according to machine stored on local machine   "dan"
-        Dim RoomFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\room.txt"                'remember to change this according to machine stored on local machine   "dan"
-        Dim ModuleFileName As String = "\\Win-L410-Server\Netusers\dpeacher\My Documents\Test Text Files\module.txt"                'remember to change this according to machine stored on local machine   "dan"
+        Dim LecturerFileName As String = "Files\lecturer.txt"
+        Dim ClassFileName As String = "Files\class.txt"
+        Dim RoomFileName As String = "Files\room.txt"
+        Dim ModuleFileName As String = "Files\module.txt"
 
         'Variables to save the list of data to.
         Dim LecturerLine As String
@@ -96,7 +96,8 @@
             'Notify user.
             MsgBox("File Does Not Exist")
         End If
-
+        '-----------------------------------------------------------------
+        'TESTING PURPOSES
         cmbClass.SelectedIndex = 0
         cmbDay.SelectedIndex = 0
         cmbHours.SelectedIndex = 0
@@ -105,7 +106,7 @@
         cmbRoom.SelectedIndex = 0
         cmbTimeStart.SelectedIndex = 0
         cmbTimeFinish.SelectedIndex = 5
-
+        '-------------------------------------------------------------------
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
@@ -117,13 +118,21 @@
     End Sub
 
     Private Sub UpdateHours_Click(sender As Object, e As EventArgs) Handles UpdateHours.Click
+
+        Dim mon As Integer
+        Dim tue As Integer
+        Dim wed As Integer
+        Dim thu As Integer
+        Dim fri As Integer
+        Dim sat As Integer
+
         Try
-            Dim mon As Integer = Int32.Parse(MondayHours.Text)
-            Dim tue As Integer = Int32.Parse(TuesdayHours.Text)
-            Dim wed As Integer = Int32.Parse(WednesdayHours.Text)
-            Dim thu As Integer = Int32.Parse(ThursdayHours.Text)
-            Dim fri As Integer = Int32.Parse(FridayHours.Text)
-            Dim sat As Integer = Int32.Parse(SaturdayHours.Text)
+            mon = Int32.Parse(MondayHours.Text)
+            tue = Int32.Parse(TuesdayHours.Text)
+            wed = Int32.Parse(WednesdayHours.Text)
+            thu = Int32.Parse(ThursdayHours.Text)
+            fri = Int32.Parse(FridayHours.Text)
+            sat = Int32.Parse(SaturdayHours.Text)
 
             TotalHours.Text = mon + tue + wed + thu + fri + sat
 
@@ -139,7 +148,7 @@
 
     
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim fileLesson As String = "\\Win-L410-Server\Netusers\scook\Desktop\GitHub\timetable\code\Test Text Files\lessons.txt"
+        Dim fileLesson As String = "Files\lessons.txt"
 
         If System.IO.File.Exists(fileLesson) = True Then
 

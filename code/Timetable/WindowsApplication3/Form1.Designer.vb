@@ -84,6 +84,7 @@ Partial Class frmMain
         '
         'cmbLecturer
         '
+        Me.cmbLecturer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbLecturer.Location = New System.Drawing.Point(81, 15)
         Me.cmbLecturer.Name = "cmbLecturer"
         Me.cmbLecturer.Size = New System.Drawing.Size(88, 21)
@@ -91,6 +92,7 @@ Partial Class frmMain
         '
         'cmbClass
         '
+        Me.cmbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbClass.FormattingEnabled = True
         Me.cmbClass.Location = New System.Drawing.Point(81, 39)
         Me.cmbClass.Name = "cmbClass"
@@ -99,6 +101,7 @@ Partial Class frmMain
         '
         'cmbModule
         '
+        Me.cmbModule.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbModule.FormattingEnabled = True
         Me.cmbModule.Location = New System.Drawing.Point(81, 66)
         Me.cmbModule.Name = "cmbModule"
@@ -107,6 +110,7 @@ Partial Class frmMain
         '
         'cmbRoom
         '
+        Me.cmbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRoom.FormattingEnabled = True
         Me.cmbRoom.Location = New System.Drawing.Point(81, 93)
         Me.cmbRoom.Name = "cmbRoom"
@@ -538,6 +542,7 @@ Partial Class frmMain
         '
         'cmbHours
         '
+        Me.cmbHours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbHours.FormattingEnabled = True
         Me.cmbHours.Location = New System.Drawing.Point(19, 27)
         Me.cmbHours.Name = "cmbHours"
@@ -564,6 +569,7 @@ Partial Class frmMain
         '
         'cmbDay
         '
+        Me.cmbDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbDay.FormattingEnabled = True
         Me.cmbDay.Items.AddRange(New Object() {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"})
         Me.cmbDay.Location = New System.Drawing.Point(81, 120)
@@ -671,6 +677,7 @@ Partial Class frmMain
         '
         'cmbTimeFinish
         '
+        Me.cmbTimeFinish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTimeFinish.FormattingEnabled = True
         Me.cmbTimeFinish.Items.AddRange(New Object() {"08:45", "09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "12:45", "13:00", "13:15", "13:30", "13:45", "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45", "16:00", "16:15", "16:30", "16:45", "17:00"})
         Me.cmbTimeFinish.Location = New System.Drawing.Point(81, 175)
@@ -680,6 +687,7 @@ Partial Class frmMain
         '
         'cmbTimeStart
         '
+        Me.cmbTimeStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTimeStart.ForeColor = System.Drawing.SystemColors.WindowText
         Me.cmbTimeStart.FormattingEnabled = True
         Me.cmbTimeStart.Items.AddRange(New Object() {"08:45", "09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "12:45", "13:00", "13:15", "13:30", "13:45", "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45", "16:00", "16:15", "16:30", "16:45", "17:00"})
