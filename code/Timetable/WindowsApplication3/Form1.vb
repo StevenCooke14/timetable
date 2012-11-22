@@ -18,6 +18,7 @@
         Dim ClassFileName As String = "Files\class.txt"
         Dim RoomFileName As String = "Files\room.txt"
         Dim ModuleFileName As String = "Files\module.txt"
+        Dim HoursFileName As String = "Files\lecturer.txt"
 
         'Variables to save the list of data to.
         Dim LecturerLine As String
@@ -38,9 +39,7 @@
                 LecturerLine = ""
                 LecturerLine = LecturerLine & objReader.ReadLine()
                 cmbLecturer.Items.Add(LecturerLine)
-                HoursLine = ""
-                HoursLine = HoursLine & objReader.ReadLine()
-                cmbHours.Items.Add(HoursLine)
+                
             Loop
             'If file does not exist then,
         Else
@@ -91,7 +90,23 @@
                 ModuleLine = ModuleLine & objReader.ReadLine()
                 cmbModule.Items.Add(ModuleLine)
             Loop
-            'If file does not exist then,
+
+        Else
+            'Notify user.
+            MsgBox("File Does Not Exist")
+
+
+        End If
+
+        If System.IO.File.Exists(HoursFileName) = True Then
+            Dim objReader As New System.IO.StreamReader(HoursFileName)
+            'Display text,
+            Do While objReader.Peek() <> -1
+                HoursLine = ""
+                HoursLine = HoursLine & objReader.ReadLine()
+                cmbHours.Items.Add(HoursLine)
+            Loop
+
         Else
             'Notify user.
             MsgBox("File Does Not Exist")
