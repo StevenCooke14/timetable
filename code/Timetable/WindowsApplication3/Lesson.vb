@@ -29,6 +29,9 @@
         If m_day = "Thursday" Then Return 3
         If m_day = "Friday" Then Return 4
         If m_day = "Saturday" Then Return 5
+        Return MsgBox("day not available")
+
+
     End Function
     Public Function getStart() As String
         Return m_start

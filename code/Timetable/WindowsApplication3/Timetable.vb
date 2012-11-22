@@ -69,7 +69,7 @@
         Next intCount
     End Sub
     Public Sub showTimetableLessons(ByRef table As System.Windows.Forms.TableLayoutPanel)
-        Dim mP As Panel
+        'Dim mP As Panel
         Dim t_start As String
         Dim t_end As String
         Dim x As Integer
