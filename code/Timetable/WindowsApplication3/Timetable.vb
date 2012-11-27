@@ -1,4 +1,6 @@
 ﻿Public Class Timetable
+    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+
     Private m_lessons(0 To 50) As Lesson
     Private m_panel(0 To 50) As Panel
     Private m_nLessons As Integer
@@ -69,7 +71,6 @@
         Next intCount
     End Sub
     Public Sub showTimetableLessons(ByRef table As System.Windows.Forms.TableLayoutPanel)
-        'Dim mP As Panel
         Dim t_start As String
         Dim t_end As String
         Dim x As Integer
@@ -81,14 +82,24 @@
 
         For intCount = 0 To m_nLessons - 1
             m_panel(intCount) = New Panel()
-            m_panel(intCount).BackColor = Color.Red
-            t_start = m_lessons(intCount).getStart()
-                x = times.IndexOf(t_start)
 
-                t_end = m_lessons(intCount).getEnd()
-                y = m_lessons(intCount).getDaynum()
-                table.Controls.Add(m_panel(intCount), x, y)
+
+            m_panel(intCount).BackColor = Color.Cyan
+            m_panel(intCount).BorderStyle = BorderStyle.FixedSingle
+
+            t_start = m_lessons(intCount).getStart()
+            x = times.IndexOf(t_start)
+
+            t_end = m_lessons(intCount).getEnd()
+            y = m_lessons(intCount).getDaynum()
+            Dim l As Integer
+            l = times.IndexOf(t_end) - x
+            table.Controls.Add(m_panel(intCount), x, y)
+            table.SetColumnSpan(m_panel(intCount), l)
+
         Next intCount
+
+        
 
     End Sub
 
