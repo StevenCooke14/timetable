@@ -37,6 +37,7 @@ Partial Class frmMain
         Me.Label14 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.tbpLecturer = New System.Windows.Forms.TabPage()
+        Me.LectChoice = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.tbpClass = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
@@ -58,7 +59,6 @@ Partial Class frmMain
         Me.TuesdayHours = New System.Windows.Forms.TextBox()
         Me.MondayHours = New System.Windows.Forms.TextBox()
         Me.cmbHours = New System.Windows.Forms.ComboBox()
-        Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.cmbDay = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -75,6 +75,8 @@ Partial Class frmMain
         Me.cmbTimeFinish = New System.Windows.Forms.ComboBox()
         Me.cmbTimeStart = New System.Windows.Forms.ComboBox()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.RoomChoice = New System.Windows.Forms.ComboBox()
+        Me.GroupChoice = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.tbpLesson.SuspendLayout()
         Me.tbpLecturer.SuspendLayout()
@@ -119,7 +121,7 @@ Partial Class frmMain
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(313, 305)
+        Me.btnUpdate.Location = New System.Drawing.Point(313, 276)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(86, 23)
         Me.btnUpdate.TabIndex = 7
@@ -135,11 +137,12 @@ Partial Class frmMain
         Me.TabControl1.Location = New System.Drawing.Point(415, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(682, 287)
+        Me.TabControl1.Size = New System.Drawing.Size(682, 318)
         Me.TabControl1.TabIndex = 8
         '
         'tbpLesson
         '
+        Me.tbpLesson.Controls.Add(Me.GroupChoice)
         Me.tbpLesson.Controls.Add(Me.Label22)
         Me.tbpLesson.Controls.Add(Me.Label21)
         Me.tbpLesson.Controls.Add(Me.Label20)
@@ -150,9 +153,9 @@ Partial Class frmMain
         Me.tbpLesson.Location = New System.Drawing.Point(4, 22)
         Me.tbpLesson.Name = "tbpLesson"
         Me.tbpLesson.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpLesson.Size = New System.Drawing.Size(674, 261)
+        Me.tbpLesson.Size = New System.Drawing.Size(674, 292)
         Me.tbpLesson.TabIndex = 0
-        Me.tbpLesson.Text = "Lesson Timetable"
+        Me.tbpLesson.Text = "Group Timetable"
         Me.tbpLesson.UseVisualStyleBackColor = True
         '
         'Label22
@@ -263,13 +266,23 @@ Partial Class frmMain
         '
         'tbpLecturer
         '
+        Me.tbpLecturer.Controls.Add(Me.LectChoice)
         Me.tbpLecturer.Controls.Add(Me.TableLayoutPanel2)
         Me.tbpLecturer.Location = New System.Drawing.Point(4, 22)
         Me.tbpLecturer.Name = "tbpLecturer"
-        Me.tbpLecturer.Size = New System.Drawing.Size(674, 261)
+        Me.tbpLecturer.Size = New System.Drawing.Size(674, 292)
         Me.tbpLecturer.TabIndex = 7
         Me.tbpLecturer.Text = "Lecturer Timetable"
         Me.tbpLecturer.UseVisualStyleBackColor = True
+        '
+        'LectChoice
+        '
+        Me.LectChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.LectChoice.FormattingEnabled = True
+        Me.LectChoice.Location = New System.Drawing.Point(150, 262)
+        Me.LectChoice.Name = "LectChoice"
+        Me.LectChoice.Size = New System.Drawing.Size(103, 21)
+        Me.LectChoice.TabIndex = 2
         '
         'TableLayoutPanel2
         '
@@ -310,7 +323,7 @@ Partial Class frmMain
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.777778!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.777778!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.777778!))
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(19, 6)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(19, 8)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 6
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
@@ -319,17 +332,18 @@ Partial Class frmMain
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(649, 234)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(649, 232)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'tbpClass
         '
+        Me.tbpClass.Controls.Add(Me.RoomChoice)
         Me.tbpClass.Controls.Add(Me.TableLayoutPanel3)
         Me.tbpClass.Location = New System.Drawing.Point(4, 22)
         Me.tbpClass.Name = "tbpClass"
-        Me.tbpClass.Size = New System.Drawing.Size(674, 261)
+        Me.tbpClass.Size = New System.Drawing.Size(674, 292)
         Me.tbpClass.TabIndex = 8
-        Me.tbpClass.Text = "Class Timetable"
+        Me.tbpClass.Text = "Room Timetable"
         Me.tbpClass.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel3
@@ -405,7 +419,7 @@ Partial Class frmMain
         Me.LecturerHoursTab.Location = New System.Drawing.Point(4, 22)
         Me.LecturerHoursTab.Name = "LecturerHoursTab"
         Me.LecturerHoursTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.LecturerHoursTab.Size = New System.Drawing.Size(674, 261)
+        Me.LecturerHoursTab.Size = New System.Drawing.Size(674, 292)
         Me.LecturerHoursTab.TabIndex = 9
         Me.LecturerHoursTab.Text = "Lecturer Hours"
         Me.LecturerHoursTab.UseVisualStyleBackColor = True
@@ -549,18 +563,9 @@ Partial Class frmMain
         Me.cmbHours.Size = New System.Drawing.Size(121, 21)
         Me.cmbHours.TabIndex = 0
         '
-        'btnEdit
-        '
-        Me.btnEdit.Location = New System.Drawing.Point(313, 218)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(86, 23)
-        Me.btnEdit.TabIndex = 9
-        Me.btnEdit.Text = "Edit"
-        Me.btnEdit.UseVisualStyleBackColor = True
-        '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(313, 247)
+        Me.btnDelete.Location = New System.Drawing.Point(313, 218)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 23)
         Me.btnDelete.TabIndex = 10
@@ -644,9 +649,9 @@ Partial Class frmMain
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(17, 42)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(35, 13)
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
         Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Class:"
+        Me.Label2.Text = "Group:"
         '
         'Label3
         '
@@ -698,12 +703,30 @@ Partial Class frmMain
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(313, 276)
+        Me.btnSave.Location = New System.Drawing.Point(313, 247)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 23)
         Me.btnSave.TabIndex = 28
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
+        '
+        'RoomChoice
+        '
+        Me.RoomChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.RoomChoice.FormattingEnabled = True
+        Me.RoomChoice.Location = New System.Drawing.Point(134, 259)
+        Me.RoomChoice.Name = "RoomChoice"
+        Me.RoomChoice.Size = New System.Drawing.Size(121, 21)
+        Me.RoomChoice.TabIndex = 2
+        '
+        'GroupChoice
+        '
+        Me.GroupChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.GroupChoice.FormattingEnabled = True
+        Me.GroupChoice.Location = New System.Drawing.Point(139, 256)
+        Me.GroupChoice.Name = "GroupChoice"
+        Me.GroupChoice.Size = New System.Drawing.Size(121, 21)
+        Me.GroupChoice.TabIndex = 30
         '
         'frmMain
         '
@@ -717,6 +740,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.btnClear)
@@ -726,9 +750,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.cmbDay)
         Me.Controls.Add(Me.btnDelete)
-        Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.cmbRoom)
         Me.Controls.Add(Me.cmbModule)
         Me.Controls.Add(Me.cmbClass)
@@ -755,7 +777,6 @@ Partial Class frmMain
     Friend WithEvents tbpLesson As System.Windows.Forms.TabPage
     Friend WithEvents tbpLecturer As System.Windows.Forms.TabPage
     Friend WithEvents tbpClass As System.Windows.Forms.TabPage
-    Friend WithEvents btnEdit As System.Windows.Forms.Button
     Friend WithEvents btnDelete As System.Windows.Forms.Button
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
@@ -799,5 +820,8 @@ Partial Class frmMain
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents LectChoice As System.Windows.Forms.ComboBox
+    Friend WithEvents RoomChoice As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupChoice As System.Windows.Forms.ComboBox
 
 End Class

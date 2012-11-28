@@ -39,4 +39,26 @@
     Public Function getEnd() As String
         Return m_end
     End Function
+
+    Public Function getLecturer() As String
+        Return m_lecturer.lName
+    End Function
+    Public Function getRoomDayTime() As String
+        Return m_room.name() + "," + m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString()
+    End Function
+    Public Function getLecturerDayTime() As String
+        Return m_lecturer.lName + "," + m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString()
+    End Function
+
+    Public Function getGroupDayTime() As String
+        Return m_group.gName() + "," + m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString()
+    End Function
+
+    Public Function getModuleDayTime() As String
+        Return m_module.moduleCode() + "," + m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString()
+    End Function
+
+    Public Function getDayTime() As String
+        Return m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString()
+    End Function
 End Class

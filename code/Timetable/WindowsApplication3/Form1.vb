@@ -25,7 +25,7 @@
         Dim ClassLine As String
         Dim RoomLine As String
         Dim ModuleLine As String
-        Dim HoursLine As String
+
 
         ' create the main timetable 
         m_timetable = New Timetable()
@@ -39,6 +39,9 @@
                 LecturerLine = ""
                 LecturerLine = LecturerLine & objReader.ReadLine()
                 cmbLecturer.Items.Add(LecturerLine)
+                cmbHours.Items.Add(LecturerLine)
+                LectChoice.Items.Add(LecturerLine)
+
                 
             Loop
             'If file does not exist then,
@@ -47,7 +50,7 @@
             MsgBox("File Does Not Exist")
         End If
 
-        'Read the Class file into the dropdown box.
+        'Read the Group file into the dropdown box.
         'If the file path exists then,
         If System.IO.File.Exists(ClassFileName) = True Then
             Dim objReader As New System.IO.StreamReader(ClassFileName)
@@ -56,6 +59,8 @@
                 ClassLine = ""
                 ClassLine = ClassLine & objReader.ReadLine()
                 cmbClass.Items.Add(ClassLine)
+                GroupChoice.Items.Add(ClassLine)
+
             Loop
             'If file does not exist then,
         Else
@@ -73,6 +78,7 @@
                 RoomLine = ""
                 RoomLine = RoomLine & objReader.ReadLine()
                 cmbRoom.Items.Add(RoomLine)
+                RoomChoice.Items.Add(RoomLine)
             Loop
             'If file does not exist then,
         Else
@@ -98,19 +104,21 @@
 
         End If
 
-        If System.IO.File.Exists(HoursFileName) = True Then
-            Dim objReader As New System.IO.StreamReader(HoursFileName)
-            'Display text,
-            Do While objReader.Peek() <> -1
-                HoursLine = ""
-                HoursLine = HoursLine & objReader.ReadLine()
-                cmbHours.Items.Add(HoursLine)
-            Loop
+        'If System.IO.File.Exists(HoursFileName) = True Then
+        '    Dim objReader As New System.IO.StreamReader(HoursFileName)
+        '    'Display text,
+        '    Do While objReader.Peek() <> -1
+        '        HoursLine = ""
+        '        HoursLine = HoursLine & objReader.ReadLine()
 
-        Else
-            'Notify user.
-            MsgBox("File Does Not Exist")
-        End If
+        '    Loop
+
+        'Else
+        '    'Notify user.
+        '    MsgBox("File Does Not Exist")
+        'End If
+
+
         '-----------------------------------------------------------------
         'TESTING PURPOSES
         cmbClass.SelectedIndex = 0
@@ -121,11 +129,19 @@
         cmbRoom.SelectedIndex = 0
         cmbTimeStart.SelectedIndex = 0
         cmbTimeFinish.SelectedIndex = 5
+        LectChoice.SelectedIndex = 0
+        RoomChoice.SelectedIndex = 0
+        GroupChoice.SelectedIndex = 0
+
         '-------------------------------------------------------------------
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        m_timetable.showTimetableLessons(TableLayoutPanel1)
+        ' m_timetable.showTimetableLessons(TableLayoutPanel1)
+        m_timetable.showGroupLessons(TableLayoutPanel1, GroupChoice.SelectedItem.ToString)
+        m_timetable.showLecturerLessons(TableLayoutPanel2, LectChoice.SelectedItem.ToString)
+        m_timetable.showRoomLessons(TableLayoutPanel3, RoomChoice.SelectedItem.ToString)
+
     End Sub
 
     Private Sub lstLesson_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstLesson.SelectedIndexChanged
@@ -209,9 +225,19 @@
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         m_timetable.removeData(lstLesson.SelectedIndex, lstLesson)
 
+
+
     End Sub
 
     Private Sub lstLesson_MouseClick(sender As Object, e As EventArgs)
         m_timetable.showSelected(lstLesson.SelectedIndex, lstLesson)
     End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs)
+
+        m_timetable.removeData(lstLesson.SelectedIndex, lstLesson)
+
+    End Sub
+
+
 End Class
