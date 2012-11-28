@@ -1,10 +1,27 @@
-﻿Public Class Timetable
+
+
+
+''*********************************************************
+'*  Project Name: Class Scheduling System  		         *
+'*                                         		         *
+'*  Project Version: 1.0                   		         *
+'*				           		                         *
+'*  Class Desc: adding a lesson to the timetable  	     *
+'*  				           		                     *
+'*  Author: Steven Cooke, Daniel Peacher, Daniel Bell    *
+'*********************************************************
+
+
+
+Public Class Timetable
     'Private m_lessons(0 To 50) As Lesson
     Private m_panel(0 To 50) As Panel
     Private m_nLessons As Integer
     Private times As New List(Of String)
     Private m_lessons As New List(Of Lesson)
+
     Public Sub New()
+        'Add the folowing to the array
         m_nLessons = 0
 
         times.Add("08:45")
@@ -53,7 +70,7 @@
     End Sub
 
 
-
+    'Add a lesson to the list box
 
     Public Sub addLesson(ByRef l As Lesson)
         ' m_lessons(m_nLessons) = l
@@ -76,13 +93,17 @@
                 exists = True
             End If
         Next Lesson
+
         If (Not exists) Then
             m_lessons.Add(l)
         Else
             MsgBox(msg)
         End If
     End Sub
+
+    'Load all of the saved lessons back into the program after program execution
     Public Sub showLessons(ByRef l As ListBox)
+
         ''List in Listbox
         'Dim tl As Lesson
         l.Items.Clear()
@@ -113,13 +134,23 @@
 
     End Sub
 
+    
+
+    'Adding the lesson to a panel and then displaying it on the timetable
+
     Public Sub showTimetableLessons(ByRef table As System.Windows.Forms.TableLayoutPanel)
-        'Dim mP As Panel
+        'Time Start
         Dim t_start As String
+        'Time End
         Dim t_end As String
+        'The row on the table
         Dim x As Integer
+        'The column on the table
         Dim y As Integer
+
         Dim intCount As Integer
+
+        Dim l As Integer
 
         'For intCount = 0 To m_nLessons
 
@@ -135,7 +166,7 @@
 
             t_end = Lesson.getEnd()
             y = Lesson.getDaynum()
-            Dim l As Integer
+
             l = times.IndexOf(t_end) - x
             table.Controls.Add(m_panel(intCount), x, y)
             table.SetColumnSpan(m_panel(intCount), l)
@@ -143,14 +174,17 @@
         Next Lesson
 
     End Sub
+    'The legnth of the panel
 
-    'Sub removeData(p1 As Integer, listBox As ListBox)
+   
 
+       
 
 
     Sub showSelected(p1 As Integer, listBox As ListBox)
         Throw New NotImplementedException
     End Sub
+
 
     Public Sub showLecturerLessons(ByRef table As System.Windows.Forms.TableLayoutPanel, ByRef lectChoice As String)
 
@@ -276,4 +310,5 @@
         Next Lesson
 
     End Sub
+
 End Class
