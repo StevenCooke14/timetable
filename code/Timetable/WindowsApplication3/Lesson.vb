@@ -50,6 +50,9 @@
     Public Function getRoom() As String
         Return m_room.name
     End Function
+    Public Function getGroup() As String
+        Return m_group.gName
+    End Function
     Public Function getRoomDayTime() As String
         Return m_room.name() + "," + m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString()
     End Function
