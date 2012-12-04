@@ -159,7 +159,7 @@ Public Class Timetable
             val = String.Compare(ls, lectChoice, False)
             If val = 0 Then
                 m_panel_Lect(intCount) = New Panel()
-                m_panel_Lect(intCount).BackColor = Color.Red
+                m_panel_Lect(intCount).BackColor = Color.Aquamarine
                 t_start = Lesson.getStart()
                 x = times.IndexOf(t_start)
 
