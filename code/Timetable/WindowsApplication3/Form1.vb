@@ -20,12 +20,12 @@
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Define the pathways
-        Dim LecturerFileName As String = "Files\lecturer.txt"
-        Dim ClassFileName As String = "Files\class.txt"
-        Dim RoomFileName As String = "Files\room.txt"
-        Dim ModuleFileName As String = "Files\module.txt"
-        Dim HoursFileName As String = "Files\lecturer.txt"
-        Dim LessonFileName As String = "Files\lessons.txt"
+        Dim LecturerFileName As String = "Items\lecturer.txt"
+        Dim ClassFileName As String = "Items\class.txt"
+        Dim RoomFileName As String = "Items\room.txt"
+        Dim ModuleFileName As String = "Items\module.txt"
+        Dim HoursFileName As String = "Items\lecturer.txt"
+        Dim LessonFileName As String = "Items\lessons.txt"
 
         'Variables to save the list of data to.
         Dim LecturerLine As String
@@ -152,7 +152,7 @@
 
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim fileLesson As String = "Files\lessons.txt"
+        Dim fileLesson As String = "Items\lessons.txt"
         If System.IO.File.Exists(fileLesson) = True Then
             ''Open the lesson file
             Dim writer As New IO.StreamWriter(fileLesson)
