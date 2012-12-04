@@ -70,7 +70,7 @@ Public Class Timetable
         Dim exists As Boolean
         exists = False
         Dim msg As String
-        msg = ""
+        msg = "clash code made an exception"
         For Each Lesson In m_lessons
             If (String.Compare(l.getLecturerDayTime(), Lesson.getLecturerDayTime()) = 0) Then
                 msg = "Lecturer clash"
@@ -94,21 +94,27 @@ Public Class Timetable
     End Sub
 
     Public Sub addLessonString(ByRef str As String)
-        ' str is a comma delimited string as stored in file
-        Dim fields(0 To 6) As String
-        Dim t As String
+        Try
+            ' str is a comma delimited string as stored in file
+            Dim fields(0 To 6) As String
 
-        ' Split the string at the comma characters and add each field to a ListBox
-        fields = Split(str, ",")
 
-        For i = 0 To 6
-            Trim$(fields(i))
-        Next
+            ' Split the string at the comma characters and add each field to a ListBox
+            fields = Split(str, ",")
 
-        Dim l As Lesson
-        l = New Lesson(fields(0), fields(1), fields(2), fields(3), fields(4), fields(5), fields(6))
-        m_lessons.Add(l)
+            For i = 0 To 6
+                Trim$(fields(i))
+            Next
 
+            Dim l As Lesson
+            l = New Lesson(fields(0), fields(1), fields(2), fields(3), fields(4), fields(5), fields(6))
+            m_lessons.Add(l)
+
+        Catch
+
+            MsgBox("could not split string and add lesson as a object")
+
+        End Try
     End Sub
 
     'Load all of the saved lessons back into the program after program execution
@@ -145,35 +151,43 @@ Public Class Timetable
         Dim y As Integer
         Dim intCount As Integer
 
-        For Each Panel In m_panel_Lect
-            table.Controls.Remove(Panel)
-        Next
+        Try
 
-        intCount = 0
-        Dim ls As String
-        For Each Lesson In m_lessons
-            Dim val As Integer
+            For Each Panel In m_panel_Lect
+                table.Controls.Remove(Panel)
+            Next
+
+            intCount = 0
+            Dim ls As String
+            For Each Lesson In m_lessons
+                Dim val As Integer
 
 
-            ls = Lesson.getLecturer()
-            val = String.Compare(ls, lectChoice, False)
-            If val = 0 Then
-                m_panel_Lect(intCount) = New Panel()
-                m_panel_Lect(intCount).BackColor = Color.Aquamarine
-                t_start = Lesson.getStart()
-                x = times.IndexOf(t_start)
+                ls = Lesson.getLecturer()
+                val = String.Compare(ls, lectChoice, False)
+                If val = 0 Then
+                    m_panel_Lect(intCount) = New Panel()
+                    m_panel_Lect(intCount).BackColor = Color.Aquamarine
+                    t_start = Lesson.getStart()
+                    x = times.IndexOf(t_start)
 
-                t_end = Lesson.getEnd()
-                y = Lesson.getDaynum()
-                Dim l As String
-                l = times.IndexOf(t_end) - x
-                table.Controls.Add(m_panel_Lect(intCount), x, y)
-                table.SetColumnSpan(m_panel_Lect(intCount), l)
-                intCount = intCount + 1
+                    t_end = Lesson.getEnd()
+                    y = Lesson.getDaynum()
+                    Dim l As String
+                    l = times.IndexOf(t_end) - x
+                    table.Controls.Add(m_panel_Lect(intCount), x, y)
+                    table.SetColumnSpan(m_panel_Lect(intCount), l)
+                    intCount = intCount + 1
 
-            End If
+                End If
 
-        Next Lesson
+            Next Lesson
+
+        Catch
+
+            MsgBox("please dont enter reversed times")
+
+        End Try
 
     End Sub
     Public Sub showRoomLessons(ByRef table As System.Windows.Forms.TableLayoutPanel, ByRef rChoice As String)
@@ -183,6 +197,9 @@ Public Class Timetable
         Dim y As Integer
         Dim intCount As Integer
 
+        Try
+
+      
         For intCount = 0 To m_lessons.Count
             table.Controls.Remove(m_panel_Room(intCount))
         Next intCount
@@ -209,8 +226,13 @@ Public Class Timetable
 
             End If
 
-        Next Lesson
+            Next Lesson
 
+        Catch
+
+            MsgBox("please dont enter reversed times")
+
+        End Try
     End Sub
 
     Public Sub showGroupLessons(ByRef table As System.Windows.Forms.TableLayoutPanel, ByRef gChoice As String)
@@ -221,6 +243,9 @@ Public Class Timetable
         Dim y As Integer
         Dim intCount As Integer
 
+        Try
+
+        
         For Each Panel In m_panel_Group
             table.Controls.Remove(Panel)
         Next
@@ -246,9 +271,18 @@ Public Class Timetable
                 table.SetColumnSpan(m_panel_Group(intCount), l)
                 intCount = intCount + 1
 
+
             End If
 
         Next Lesson
+
+        catch 
+
+            MsgBox("please dont enter reversed times")
+
+        End Try
+
+
 
     End Sub
 

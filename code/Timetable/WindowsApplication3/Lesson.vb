@@ -19,11 +19,17 @@
     End Sub
     'Display the lesson in the listbox
     Public Function displayString() As String
+
+
         Return m_room.name() + "," + m_module.moduleCode() + "," + m_group.gName() + "," + m_lecturer.lName() + "," + m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString()
+
+
     End Function
     'Save the lesson to the text file
     Public Sub saveData(ByRef writer As IO.StreamWriter)
+
         writer.WriteLine(m_room.name() + "," + m_module.moduleCode() + "," + m_group.gName() + "," + m_lecturer.lName() + "," + m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString())
+
     End Sub
     'Get the index number of the day
     Public Function getDaynum() As Integer
@@ -64,11 +70,5 @@
         Return m_group.gName() + "," + m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString()
     End Function
 
-    Public Function getModuleDayTime() As String
-        Return m_module.moduleCode() + "," + m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString()
-    End Function
-
-    Public Function getDayTime() As String
-        Return m_day.ToString() + "," + m_start.ToString() + "," + m_end.ToString()
-    End Function
+ 
 End Class
