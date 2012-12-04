@@ -104,7 +104,8 @@
                 'If file does not exist then,
             Else
                 'Notify user.
-                MsgBox("File Does Not Exist")
+            MsgBox("File Does Not Exist")
+
             End If
 
             'Read the Module file into the dropdown box.
