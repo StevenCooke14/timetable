@@ -136,8 +136,17 @@ Public Class Timetable
     End Sub
 
     Public Sub removeData(ByVal i As Integer, ByRef l As ListBox)
+        Try
+
+       
         m_lessons.RemoveAt(i)
-        showLessons(l)
+            showLessons(l)
+
+        Catch
+
+            MsgBox("please select a lesson to delete")
+
+        End Try
 
     End Sub
 

@@ -20,12 +20,12 @@
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Define the pathways
-        Dim LecturerFileName As String = "Items\lecturer.txt"
-        Dim ClassFileName As String = "Items\class.txt"
-        Dim RoomFileName As String = "Items\room.txt"
-        Dim ModuleFileName As String = "Items\module.txt"
-        Dim HoursFileName As String = "Items\lecturer.txt"
-        Dim LessonFileName As String = "Items\lessons.txt"
+        Dim LecturerFileName As String = "lecturer.txt"
+        Dim ClassFileName As String = "class.txt"
+        Dim RoomFileName As String = "room.txt"
+        Dim ModuleFileName As String = "module.txt"
+        Dim HoursFileName As String = "lecturer.txt"
+        Dim LessonFileName As String = "lessons.txt"
 
         'Variables to save the list of data to.
         Dim LecturerLine As String
@@ -153,17 +153,25 @@
 
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim fileLesson As String = "Items\lessons.txt"
-        If System.IO.File.Exists(fileLesson) = True Then
-            ''Open the lesson file
-            Dim writer As New IO.StreamWriter(fileLesson)
-            'Loop through the listbox reading each line to file.
-            m_timetable.saveData(writer)
-            'Close the stream writer
-            writer.Close()
-        Else
-            MsgBox("File Does Not Exist")
-        End If
+
+        Try
+
+            Dim fileLesson As String = "lessons.txt"
+            If System.IO.File.Exists(fileLesson) = True Then
+                ''Open the lesson file
+                Dim writer As New IO.StreamWriter(fileLesson)
+                'Loop through the listbox reading each line to file.
+                m_timetable.saveData(writer)
+                'Close the stream writer
+                writer.Close()
+            Else
+                MsgBox("File Does Not Exist")
+            End If
+
+        Catch
+            MsgBox("file is being used")
+
+        End Try
     End Sub
     'clears the combo boxes
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
